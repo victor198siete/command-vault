@@ -25,3 +25,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+# command-vault
+
+Comprehensive Angular project designed to serve as a centralized repository for saving, organizing, and retrieving programming commands, along with their detailed descriptions and examples. It aims to be a one-stop solution for developers to manage and share snippets of code for various programming technologies.
