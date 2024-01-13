@@ -1,0 +1,8 @@
+
+<ng-container *ngFor="let commandEl of commands; let i = index">
+  <tr>
+    <td scope="row">{{ commandEl?.command_tech }}</td>
+    <td>{{ commandEl?.command_text }}</td>
+    <td>{{ commandEl?.command_description }}</td>
+  </tr>
+</ng-container>

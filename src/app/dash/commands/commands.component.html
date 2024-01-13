@@ -1,0 +1,56 @@
+<div class="row" style="margin-top: 3rem;">
+  <div class="col" style="text-align: right;">
+    <button class="btn btn-outline-secondary" style="margin-inline: 0.25rem;" (click)="activeView = 'grid'"><i class="bi bi-table"></i></button>
+    <button class="btn btn-outline-secondary" style="margin-inline: 0.25rem;" (click)="activeView = 'list'"><i class="bi bi-list"></i></button>
+  </div>
+</div>
+<div class="row" style="margin-top: 1rem;">
+  <div class="col">
+
+    <table class="table" *ngIf="activeView === 'list'">
+      <thead>
+        <tr>
+          <th scope="col">Command</th>
+          <th scope="col">Description</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let commandEl of filtrarComandosPorTech(techValue!); let i = index">
+          <tr>
+            <td>{{ commandEl?.command_text }}</td>
+            <td>{{ commandEl?.command_description }}</td>
+            <td style="width: 200px;">
+              <button class="btn btn-success" style="margin-inline: 0.25rem;"><i class="bi bi-clipboard"></i></button>
+              <button class="btn btn-primary" style="margin-inline: 0.25rem;"><i class="bi bi-pen"></i></button>
+              <button class="btn btn-danger" style="margin-inline: 0.25rem;"><i class="bi bi-trash"></i></button>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+
+    <div class="row" *ngIf="activeView === 'grid'">
+      <div class="col-md-4" *ngFor="let commandEl of filtrarComandosPorTech(techValue!); let i = index">
+        <div class="card" style="width: 25rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{ commandEl?.command_text }}</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">{{ commandEl?.command_description }}</h6>
+            <p class="card-text">Some quick example text.</p>
+            <a href="#" class="card-link" >{{ commandEl?.command_tech }}</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-success" style="margin-inline: 0.25rem;"><i class="bi bi-clipboard-minus"></i></button>
+            <button class="btn btn-primary" style="margin-inline: 0.25rem;"><i class="bi bi-pen"></i></button>
+            <button class="btn btn-danger" style="margin-inline: 0.25rem;"><i class="bi bi-trash"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+

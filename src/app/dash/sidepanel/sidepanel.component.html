@@ -1,0 +1,64 @@
+<div class="row" style="margin-top: 3rem;">
+  <div class="col">
+    <div class="row mt-3 mb-3">
+      <div class="col text-center">
+        <div class="d-flex justify-content-between">
+          <button type="button" class="btn action-btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#newCommandModal">New Command</button>
+          <button type="button" class="btn action-btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#newTechModal">New Tech</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card tech-card" *ngFor="let tech of techs">
+      <div class="card-body text-center" (click)="emitTechValue(tech.tech_name!)">
+        <img [src]=tech.tech_image> {{tech.tech_name}}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal New Command -->
+<div class="modal fade" id="newCommandModal" tabindex="-1" aria-labelledby="newCommandModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="newCommandModalLabel">Add Command</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="onAddCommand()" #newCommand="ngForm">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Tech</th>
+                <th scope="col">Command</th>
+                <th scope="col">Description</th>
+              </tr>
+            </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <select class="form-select" ngModel name="command-tech" (ngModelChange)="handleCommandTech($event)" aria-label="Default select example" required>
+                      <option *ngFor="let tech of techs" [value]="tech.tech_name">{{tech.tech_name}}</option>
+                    </select>
+                  </th>
+                  <td>
+                    <input type="text" class="form-control" ngModel name="command-text" required>
+                  </td>
+                  <td>
+                    <textarea class="form-control" ngModel name="command-des" required></textarea>
+                  </td>
+                </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" (click)="onAddCommand()" [disabled]="!newCommand.valid">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+

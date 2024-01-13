@@ -1,0 +1,13 @@
+.col-1 {
+  text-align: left;
+  cursor: pointer;
+}
+
+.selected {
+  border: 1px solid #e8ecef;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.container-fluid{
+  background-color: #f4f4f2;
+}

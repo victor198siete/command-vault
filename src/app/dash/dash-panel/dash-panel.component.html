@@ -1,0 +1,81 @@
+<div class="container-fluid text-center">
+  <app-commands [techValue]="techValue" *ngIf="techSelected"></app-commands>
+  <div class="row" *ngIf="!techSelected">
+    <div class="col" style="padding-top: 5rem; padding-bottom: 5rem;">
+      <h4>Seleccione una Tecnología!</h4>
+    </div>
+  </div>
+</div>
+
+<!-- color="#458BFF"  -->
+
+
+
+
+<!-- Modal New Tech -->
+<div class="modal fade" id="newTechModal" tabindex="-1" aria-labelledby="newTechModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="newCommandModalLabel">Add Tech</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="onAddCommand()" #newTech="ngForm">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Image</th>
+                <th scope="col">Description</th>
+              </tr>
+            </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <input type="text" class="form-control" ngModel name="tech-name" required>
+                  </th>
+                  <td>
+                    <div class="row">
+                      <!-- angular -->
+                      <div class="col-4" style="text-align: left; margin-bottom: 1rem;" (click)="emitTechValue('angular')">
+                        <img src="../../../assets/images/logos/angular.svg">
+                      </div>
+                      <!-- js -->
+                      <div class="col-4" (click)="emitTechValue('js')">
+                        <img src="../../../assets/images/logos/js.svg">
+                      </div>
+                      <!-- react -->
+                      <div class="col-4" (click)="emitTechValue('react')">
+                        <img src="../../../assets/images/logos/react.svg">
+                      </div>
+                      <!-- node -->
+                      <div class="col-4" (click)="emitTechValue('node')">
+                        <img src="../../../assets/images/logos/node.svg">
+                      </div>
+                      <!-- docker -->
+                      <div class="col-4" (click)="emitTechValue('docker')">
+                        <img src="../../../assets/images/logos/docker.svg">
+                      </div>
+                      <!-- ionic -->
+                      <div class="col-4" (click)="emitTechValue('ionic')">
+                        <img src="../../../assets/images/logos/ionic.svg">
+                      </div>
+                    </div>
+                    <input type="text" class="form-control" ngModel name="tech-image" required>
+                  </td>
+                  <td>
+                    <textarea class="form-control" ngModel name="tech-des" required></textarea>
+                  </td>
+                </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" (click)="onAddTech()" [disabled]="!newTech.valid">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
