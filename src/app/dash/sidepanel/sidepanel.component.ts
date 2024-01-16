@@ -53,6 +53,11 @@ export class SidepanelComponent {
       tech_description: 'Npm is a library and registry for JavaScript software packages. npm also has command-line tools to help you install the different packages and manage their dependencies.'
     },
     {
+      tech_name: "Nestjs",
+      tech_image: '../../../assets/images/logos/nest.svg',
+      tech_description: 'NestJS is a powerful and versatile backend framework for building scalable and maintainable server-side applications using TypeScript.'
+    },
+    {
       tech_name: "Ionic",
       tech_image: '../../../assets/images/logos/ionic.svg',
       tech_description: 'Ionic is an open source UI toolkit for building performant, high-quality mobile apps using web technologies.'
