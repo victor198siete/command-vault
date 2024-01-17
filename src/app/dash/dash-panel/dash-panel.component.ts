@@ -23,10 +23,11 @@ export class DashPanelComponent {
 
   techs: CommandTech[] = [
     {tech_id: 1, tech_name: "Angular"},
-    {tech_id: 3, tech_name: "Docker"},
+    {tech_id: 2, tech_name: "Docker"},
     {tech_id: 3, tech_name: "JS"},
-    {tech_id: 3, tech_name: "React"},
-    {tech_id: 4, tech_name: "Node JS"},
+    {tech_id: 4, tech_name: "React"},
+    {tech_id: 5, tech_name: "Node JS"},
+    {tech_id: 6, tech_name: 'Nest JS'},
     {tech_id: 4, tech_name: "Ionic"},
     {tech_id: 5, tech_name: "Git"},
   ];
