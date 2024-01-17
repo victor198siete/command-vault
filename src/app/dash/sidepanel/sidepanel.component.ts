@@ -54,7 +54,7 @@ export class SidepanelComponent {
     },
     {
       tech_name: "Nestjs",
-      tech_image: '../../../assets/images/logos/nest.svg',
+      tech_image: '../../../assets/images/logos/nestjs.svg',
       tech_description: 'NestJS is a powerful and versatile backend framework for building scalable and maintainable server-side applications using TypeScript.'
     },
     {
